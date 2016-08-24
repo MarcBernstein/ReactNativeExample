@@ -17,7 +17,7 @@ import Button from './components/Button';
 import NormalText from './components/NormalText';
 import renderIf from './utils/renderIf'
 
-const API_URL = 'https://master.thorhudl.com'
+const API_URL = 'https://www.hudl.com'
 const KEY_TOKEN = '@Hudl:token';
 
 var width = Dimensions.get('window').width; //full width
@@ -113,6 +113,8 @@ class Hudl extends Component {
       console.warn('Email and/or password missing.');
       return;
     }
+
+    console.log(`Hitting ${API_URL}/api/v2/login, with ${this.state.email}/${this.state.password}`);
 
       fetch(`${API_URL}/api/v2/login`, {
         method: 'POST',
