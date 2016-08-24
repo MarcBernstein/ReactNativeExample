@@ -17,6 +17,7 @@ import Button from './components/Button';
 import NormalText from './components/NormalText';
 import renderIf from './utils/renderIf'
 
+const API_URL = 'https://master.thorhudl.com'
 const KEY_TOKEN = '@Hudl:token';
 
 var width = Dimensions.get('window').width; //full width
@@ -64,6 +65,9 @@ class Hudl extends Component {
                style={styles.loginLogo}
                 />
       <View style={styles.container}>
+        <Text style={styles.userInfo}>
+          Pointing to {API_URL}
+        </Text>
         {renderIf(!this.state.loggedIn)(
         <TextInput ref={"_textInputEmail"}
                    style={styles.emailInput}
@@ -110,7 +114,7 @@ class Hudl extends Component {
       return;
     }
 
-      fetch('https://master.thorhudl.com/api/v2/login', {
+      fetch(`${API_URL}/api/v2/login`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
