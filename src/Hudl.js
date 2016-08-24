@@ -110,7 +110,7 @@ class Hudl extends Component {
       return;
     }
 
-      fetch('https://www.hudl.com/api/v2/login', {
+      fetch('https://master.thorhudl.com/api/v2/login', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
